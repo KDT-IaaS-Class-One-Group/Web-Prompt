@@ -7,9 +7,11 @@
 #root {
   width: 100vw;
   height: 100vh;
-  background-color: darkgray;
+  background-color: #F5F5F5;
   display: flex;
   flex-direction: column;
+  font-family: Georgia, serif;
+  
 }
 
 #Header {
@@ -29,12 +31,15 @@
   display: flex;
   flex-direction: column;
   background-color: beige;
+  font-family: Arial, sans-serif;
+  
 }
 ul {
   list-style: none;
 }
 li {
   list-style: none;
+  color : #333333;
 }
 
 #Footer {
