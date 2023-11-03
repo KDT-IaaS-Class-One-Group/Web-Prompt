@@ -8,22 +8,31 @@
   width: 100vw;
   height: 100vh;
   background-color: darkgray;
+  display: flex;
+  flex-direction: column;
 }
 
 #header {
   width: 100vw;
   height: 5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: #fff;
+  align-items: center;
+
 }
 
 #container {
   width: 100vw;
   height: 75vh;
+  display: flex;
   background-color: beige;
 }
 
 #footer {
   width: 100vw;
   height: 20vh;
+  display: flex;
   background-color: ghostwhite;
 }
