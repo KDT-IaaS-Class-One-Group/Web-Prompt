@@ -15,6 +15,9 @@ app.get('/', (req, res) => {
   res.status(200).sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+app.get("/add", (req, res) => {
+  res.status(200).sendFile(path.join(__dirname, "public", "test.html"));
+});
 
 app.get('/notfound', (req, res) => {
   res.status(404).send('요청한 페이지를 찾을 수 없습니다.');
