@@ -30,13 +30,16 @@ h1 {
   align-items: center;
 
 }
-#Text-Box{
+#textBox{
   width: 50vw;
   height: 5vh;
   display: flex;
 }
-#Text-Box > #Submit-Button{
+#submitButton{
   width: 30px;
-  height: 30px;
+  height: 5vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
 }
