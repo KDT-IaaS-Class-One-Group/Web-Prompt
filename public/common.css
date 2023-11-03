@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: darkgray;
+}
+
+#header {
+  width: 100vw;
+  height: 5vh;
+  background-color: #fff;
+}
+
+#container {
+  width: 100vw;
+  height: 75vh;
+  background-color: beige;
+}
+
+#footer {
+  width: 100vw;
+  height: 20vh;
+  background-color: ghostwhite;
+}

@@ -1,4 +1,7 @@
-// 필요한 모듈들 import
+// 모듈 사용을 위해 다음 명령어로 필요한 패키지들을 설치:
+// npm install express
+// npm install path
+
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -12,19 +15,21 @@ app.get('/', (req, res) => {
   res.status(200).sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+
 app.get('/notfound', (req, res) => {
   res.status(404).send('요청한 페이지를 찾을 수 없습니다.');
 });
 
-app.post('/login', (req, res) => {
-  const username = req.body.username;
-  const password = req.body.password;
+// todo 로그인 처리 만들 때 사용
+// app.post('/login', (req, res) => {
+//   const username = req.body.username;
+//   const password = req.body.password;
   
-  console.log(`ID: ${username}`);
-  console.log(`PW: ${password}`);
+//   console.log(`ID: ${username}`);
+//   console.log(`PW: ${password}`);
   
-  res.status(200).send('로그인 요청을 받았습니다.');
-});
+//   res.status(200).send('로그인 요청을 받았습니다.');
+// });
 
 const server = app.listen(port, () => {
   console.log(`서버가 http://localhost:${port} 에서 실행 중입니다.`);
