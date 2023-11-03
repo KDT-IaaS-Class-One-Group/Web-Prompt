@@ -35,7 +35,7 @@ h1 {
   height: 5vh;
   display: flex;
 }
-#Text-Box > #Submit{
+#Text-Box > #Submit-Button{
   width: 30px;
   height: 30px;
   display: flex;

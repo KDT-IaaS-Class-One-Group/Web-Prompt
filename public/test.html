@@ -4,9 +4,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TEST</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="index.css">
+  <title>Prompt</title>
 </head>
 <body>
-  <h1>실험</h1>
+  <div id="root">
+    <div id="Header">
+      <!-- 햄버거 메뉴 영역 -->
+      <button type="button" id="Hamburger-Menu">Ham</button>
+      <h1>🌐프롬프트(0.0)🌐
+      </h1>
+      <button type="button" id="Share-Button">Share</button>
+    </div>
+    <ul id="Container">
+      <!-- 본문 영역 -->
+      <h1>TEST</h1>
+    </ul>
+    <div id="Footer">
+      <!-- 메시지 작성 영역 -->
+      <form action="http://localhost:3000/add" method="GET">
+        <input type="text" id="Text-Box">
+          <input type="submit" id="Submit" value="보내기">
+      </form>
+    </div>
+  </div>
 </body>
 </html>
