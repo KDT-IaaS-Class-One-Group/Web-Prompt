@@ -1,3 +1,4 @@
+/* Header */
 #Hamburger-Menu {
   width: 50px;
   height: 50px;
@@ -5,11 +6,37 @@
 }
 h1 {
   display: flex;
-  text-align: center;
 }
 
 #Share-Button {
   width: 50px;
   height: 50px;
+  display: flex;
+}
+
+
+/* Container */
+#Container{
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Footer */
+#Footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+#Text-Box{
+  width: 50vw;
+  height: 5vh;
+  display: flex;
+}
+#Text-Box > #Submit{
+  width: 30px;
+  height: 30px;
   display: flex;
 }

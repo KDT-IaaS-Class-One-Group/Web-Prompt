@@ -12,7 +12,7 @@
   flex-direction: column;
 }
 
-#header {
+#Header {
   width: 100vw;
   height: 5vh;
   display: flex;
@@ -23,14 +23,21 @@
 
 }
 
-#container {
+#Container {
   width: 100vw;
   height: 75vh;
   display: flex;
+  flex-direction: column;
   background-color: beige;
 }
+ul {
+  list-style: none;
+}
+li {
+  list-style: none;
+}
 
-#footer {
+#Footer {
   width: 100vw;
   height: 20vh;
   display: flex;
