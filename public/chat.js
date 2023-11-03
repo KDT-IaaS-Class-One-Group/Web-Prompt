@@ -1,22 +1,21 @@
+// 사용자가 입력한 문자열을 li 태그로 동적 생성하는 함수
 function addText()  {
+  // input 태그에 입력된 문자열에 접근
+  const textBox = document.getElementById('textBox').value;
   
-  // 1. 추가할 값을 input창에서 읽어온다
-  const textBox 
-    = document.getElementById('textBox').value;
-  
-  // 2. 추가할 li element 생성
-  // 2-1. 추가할 li element 생성
+  // li 태그 생성
   const li = document.createElement("li");
   
-  // 2-2. li에 id 속성 추가 
+  // li에 id 속성을 추가
   li.setAttribute('id',textBox);
   
-  // 2-3. li에 text node 추가 
+  // li에 textNode 추가
   const textNode = document.createTextNode(textBox);
   li.appendChild(textNode);
   
-  // 3. 생성된 li를 ul에 추가
+  // 생성된 li를 ul(Container)에 추가
   document
     .getElementById('Container')
     .appendChild(li);
 }
+
