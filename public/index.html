@@ -13,20 +13,20 @@
   <div id="root">
     <div id="Header">
       <!-- 햄버거 메뉴 영역 -->
-      <button type="button" id="Hamburger-Menu">Ham</button>
+      <button type="button" id="Hamburger-Menu">메뉴</button>
       <h1>🌐프롬프트(0.0)🌐
       </h1>
-      <button type="button" id="Share-Button">Share</button>
+      <button type="button" id="Share-Button">공유</button>
     </div>
     <ul id="Container">
       <!-- 본문 영역 -->
     </ul>
     <div id="Footer">
       <!-- 메시지 작성 영역 -->
-      <form action="http://localhost:3000/add" method="GET">
-        <input type="text" id="Text-Box">
-          <input type="submit" id="Submit-Button" value="보내기">
-      </form>
+      <!-- <form action="http://localhost:3000/add" method="GET"> -->
+        <input type="text" id="textBox">
+        <input type="submit" value=">" id="Button-Submit" onclick="addText()"  >
+      <!-- </form> -->
     </div>
   </div>
 </body>
