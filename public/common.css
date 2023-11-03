@@ -51,4 +51,5 @@ li {
   height: 20vh;
   display: flex;
   background-color: ghostwhite;
+  justify-content: center;
 }
