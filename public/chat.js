@@ -9,11 +9,11 @@ function addText()  {
   const spanText = document.createElement("span")
   const spanTimeStamp = document.createElement("span")
   
-  // li에 id 속성을 추가 // spanProfile, spanText, spanTimeStamp 추가
-  li.setAttribute("id", textBox);
-  spanProfile.setAttribute("id-profile", textBox)
-  spanText.setAttribute("id-text", textBox)
-  spanTimeStamp.setAttribute("id-timestamp", textBox)
+  // 클래스 지정
+  spanProfile.classList.add("profile");
+  spanText.classList.add("text")
+  spanTimeStamp.classList.add("timeStamp")
+
   
   // li에 textNode 추가 // spanText도 추가하기
   const textNode = document.createTextNode(textBox);
@@ -31,5 +31,3 @@ function addText()  {
   li.appendChild(spanTimeStamp)    
    
 }
-
-

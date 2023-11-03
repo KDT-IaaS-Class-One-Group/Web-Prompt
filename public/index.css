@@ -20,8 +20,25 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-
-
+#Container span {
+  display: flex;
+}
+[class="profile"]{
+  width: 3vw;
+  height: 3vw;
+  justify-content: center;
+  align-items: center;
+}
+[class="text"]{
+  height: 5vh;
+  justify-content: center;
+  align-items: center;
+}
+[class="timeStamp"]{
+  height: 5vh;
+  justify-content: center;
+  align-items: center;
+}
 /* Footer */
 #Footer{
   display: flex;
