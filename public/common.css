@@ -32,7 +32,6 @@
   flex-direction: column;
   background-color: beige;
   font-family: Arial, sans-serif;
-  
 }
 ul {
   list-style: none;
@@ -40,6 +39,11 @@ ul {
 li {
   list-style: none;
   color : #333333;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
 }
 
 #Footer {
