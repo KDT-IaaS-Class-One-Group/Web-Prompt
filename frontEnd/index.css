@@ -1,3 +1,4 @@
+/* Header */
 * {
   margin: 0;
   padding: 0;
@@ -54,4 +55,67 @@ li {
   display: flex;
   background-color: ghostwhite;
   justify-content: center;
+}
+
+
+#Hamburger-Menu {
+  width: 50px;
+  height: 50px;
+  display: flex;
+}
+h1 {
+  display: flex;
+}
+
+#Share-Button {
+  width: 50px;
+  height: 50px;
+  display: flex;
+}
+
+
+/* Container */
+#Container{
+  justify-content: center;
+  align-items: center;
+}
+#Container span {
+  display: flex;
+}
+[class="profile"]{
+  width: 3vw;
+  height: 3vw;
+  justify-content: center;
+  align-items: center;
+}
+[class="text"]{
+  height: 5vh;
+  justify-content: center;
+  align-items: center;
+}
+[class="timeStamp"]{
+  height: 5vh;
+  justify-content: center;
+  align-items: center;
+}
+/* Footer */
+#Footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+#textBox{
+  width: 50vw;
+  height: 5vh;
+  display: flex;
+}
+#submitButton{
+  width: 30px;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
 }

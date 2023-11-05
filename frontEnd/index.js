@@ -29,5 +29,4 @@ function addText()  {
   li.appendChild(spanProfile)    
   li.appendChild(spanText)    
   li.appendChild(spanTimeStamp)    
-   
 }
