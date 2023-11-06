@@ -39,6 +39,7 @@ li {
 
 .timeStamp {
   color: #333333; /* Text color */
+  float: right;
 }
 
 /* Footer Styles */
