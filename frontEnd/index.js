@@ -1,5 +1,3 @@
-// index.js
-
 function addText() {
   const textBox = document.getElementById('textBox');
   const inputValue = textBox.value.trim();
@@ -8,68 +6,53 @@ function addText() {
     return;
   }
 
-  const container = document.getElementById('Container');
-  const li = document.createElement('li');
-  li.classList.add('message');
+  // li 태그 생성
+  const li = document.createElement("li");
+  li.classList.add("message");
 
-  const spanProfile = document.createElement('span');
-  spanProfile.classList.add('profile');
-  spanProfile.textContent = 'user';
+  // span 요소 생성 및 클래스 지정
+  const spanProfile = document.createElement("span");
+  spanProfile.classList.add("profile");
+  spanProfile.textContent = "user";
 
-  const spanText = document.createElement('span');
-  spanText.classList.add('text');
-  spanText.textContent = inputValue;
+  const spanText = document.createElement("span");
+  spanText.classList.add("text");
+  spanText.textContent = `${inputValue}`;
 
-  const spanTimeStamp = document.createElement('span');
-  spanTimeStamp.classList.add('timeStamp');
+  const spanTimeStamp = document.createElement("span");
+  spanTimeStamp.classList.add("timeStamp");
   const currentTime = new Date().toLocaleTimeString();
   spanTimeStamp.textContent = currentTime;
 
+  // 생성된 span 요소들을 li에 추가
   li.appendChild(spanProfile);
   li.appendChild(spanText);
   li.appendChild(spanTimeStamp);
 
-  container.appendChild(li);
+  // 생성된 li를 ul(Container)에 추가
+  document.getElementById("Container").appendChild(li);
 
-  textBox.value = '';
+  // Assistant의 응답 생성
+  const assistantResponse = document.createElement("span");
+  assistantResponse.classList.add("text");
+  assistantResponse.textContent = "제 생각에 " + inputValue + "에 대한 내용은...";
+  
+  const assistantLi = document.createElement("li");
+  assistantLi.classList.add("message");
+  const assistantSpanProfile = document.createElement("span");
+  assistantSpanProfile.classList.add("profile");
+  assistantSpanProfile.textContent = "assistant";
+  const assistantSpanTimeStamp = document.createElement("span");
+  assistantSpanTimeStamp.classList.add("timeStamp");
+  assistantSpanTimeStamp.textContent = new Date().toLocaleTimeString();
+
+  assistantLi.appendChild(assistantSpanProfile);
+  assistantLi.appendChild(assistantResponse);
+  assistantLi.appendChild(assistantSpanTimeStamp);
+
+  // Assistant의 응답 li를 ul(Container)에 추가
+  document.getElementById("Container").appendChild(assistantLi);
+
+  // 입력창 비우기
+  textBox.value = "";
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  // 초기 데이터 렌더링 로직 (기존 renderData 함수 대신 사용)
-  const initialData = [
-    {
-      type: 'user',
-      message: 'How does OpenAI work?',
-      timestamp: '10:23 AM',
-    },
-    {
-      type: 'assistant',
-      message: 'OpenAI is a machine learning model...',
-      timestamp: '10:24 AM',
-    },
-  ];
-
-  const container = document.getElementById('Container');
-  initialData.forEach(item => {
-    const li = document.createElement('li');
-    li.classList.add('message');
-
-    const spanProfile = document.createElement('span');
-    spanProfile.classList.add('profile');
-    spanProfile.textContent = item.type;
-
-    const spanText = document.createElement('span');
-    spanText.classList.add('text');
-    spanText.textContent = item.message;
-
-    const spanTimeStamp = document.createElement('span');
-    spanTimeStamp.classList.add('timeStamp');
-    spanTimeStamp.textContent = item.timestamp;
-
-    li.appendChild(spanProfile);
-    li.appendChild(spanText);
-    li.appendChild(spanTimeStamp);
-
-    container.appendChild(li);
-  });
-});
