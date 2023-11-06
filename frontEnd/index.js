@@ -13,7 +13,7 @@ function addText() {
   // span 요소 생성 및 클래스 지정
   const spanProfile = document.createElement("span");
   spanProfile.classList.add("profile");
-  spanProfile.textContent = "👤(user)";
+  spanProfile.textContent = "👤(User): ";
 
   const spanText = document.createElement("span");
   spanText.classList.add("text");
@@ -41,7 +41,7 @@ function addText() {
   assistantLi.classList.add("message");
   const assistantSpanProfile = document.createElement("span");
   assistantSpanProfile.classList.add("profile");
-  assistantSpanProfile.textContent = "🌐(assistant)";
+  assistantSpanProfile.textContent = "🌐(Assistant): ";
   const assistantSpanTimeStamp = document.createElement("span");
   assistantSpanTimeStamp.classList.add("timeStamp");
   assistantSpanTimeStamp.textContent = new Date().toLocaleTimeString();
