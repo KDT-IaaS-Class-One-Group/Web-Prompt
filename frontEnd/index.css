@@ -1,121 +1,67 @@
-/* Header */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* index.css */
 
-#root {
-  width: 100vw;
-  height: 100vh;
-  background-color: #F5F5F5;
-  display: flex;
-  flex-direction: column;
-  font-family: Georgia, serif;
-  
-}
-
+/* Header Styles */
 #Header {
-  width: 100vw;
-  height: 5vh;
+  background-color: #FF5733; /* Primary color */
+  color: #F5F5F5; /* Background color */
+  font-family: "Arial, sans-serif"; /* Main font */
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  background-color: #fff;
   align-items: center;
-
+  padding: 10px 20px;
 }
 
+#Hamburger-Menu, #Share-Button {
+  background-color: transparent;
+  border: none;
+  color: #F5F5F5; /* Background color */
+  font-family: "Arial, sans-serif"; /* Main font */
+  cursor: pointer;
+}
+
+/* Main Content Styles */
 #Container {
-  width: 100vw;
-  height: 75vh;
-  display: flex;
-  flex-direction: column;
-  background-color: beige;
-  font-family: Arial, sans-serif;
+  list-style-type: none;
+  padding: 20px;
+  background-color: #F5F5F5; /* Background color */
 }
-ul {
-  list-style: none;
-}
+
 li {
-  list-style: none;
-  color : #333333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  margin-top: 0.5vh;
-  margin-bottom: 0.5vh;
-  vertical-align: middle
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #FFFFFF; /* Secondary color */
+  border-radius: 5px;
 }
 
+.profile {
+  font-weight: bold;
+}
+
+.timeStamp {
+  color: #333333; /* Text color */
+}
+
+/* Footer Styles */
 #Footer {
-  width: 100vw;
-  height: 20vh;
+  background-color: #FF5733; /* Primary color */
+  color: #F5F5F5; /* Background color */
+  padding: 20px;
   display: flex;
-  background-color: ghostwhite;
-  justify-content: center;
-}
-
-
-#Hamburger-Menu {
-  width: 50px;
-  height: 50px;
-  display: flex;
-}
-h1 {
-  display: flex;
-}
-
-#Share-Button {
-  width: 50px;
-  height: 50px;
-  display: flex;
-}
-
-
-/* Container */
-#Container{
-  justify-content: center;
   align-items: center;
 }
-#Container span {
-  display: flex;
-}
-[class="profile"]{
-  width: 3vw;
-  height: 3vw;
-  justify-content: center;
-  align-items: center;
-}
-[class="text"]{
-  height: 5vh;
-  justify-content: center;
-  align-items: center;
-}
-[class="timeStamp"]{
-  height: 5vh;
-  justify-content: center;
-  align-items: center;
-}
-/* Footer */
-#Footer{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 
+#textBox {
+  flex: 1;
+  margin-right: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
 }
-#textBox{
-  width: 50vw;
-  height: 5vh;
-  display: flex;
-}
-#submitButton{
-  width: 30px;
-  height: 5vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: x-large;
+
+#submitButton {
+  background-color: transparent;
+  border: none;
+  color: #F5F5F5; /* Background color */
+  font-family: "Arial, sans-serif"; /* Main font */
+  cursor: pointer;
 }

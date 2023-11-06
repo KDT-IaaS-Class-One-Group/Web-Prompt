@@ -1,37 +1,75 @@
-function addText() {
-  // input 태그에 입력된 문자열에 접근
-  const textBox = document.getElementById('textBox');
-  const inputValue = textBox.value;
+// index.js
 
-  // 입력값이 공백인 경우 함수를 실행하지 않음
-  if (inputValue.trim() === "") {
+function addText() {
+  const textBox = document.getElementById('textBox');
+  const inputValue = textBox.value.trim();
+
+  if (inputValue === "") {
     return;
   }
 
-  // 이하 코드는 입력값이 공백이 아닐 때만 실행됨
+  const container = document.getElementById('Container');
+  const li = document.createElement('li');
+  li.classList.add('message');
 
-  // li 태그 생성
-  const li = document.createElement("li");
+  const spanProfile = document.createElement('span');
+  spanProfile.classList.add('profile');
+  spanProfile.textContent = 'user';
 
-  // span 요소 생성 및 클래스 지정
-  const spanProfile = document.createElement("span");
-  spanProfile.classList.add("profile");
+  const spanText = document.createElement('span');
+  spanText.classList.add('text');
+  spanText.textContent = inputValue;
 
-  const spanText = document.createElement("span");
-  spanText.classList.add("text");
-  spanText.textContent = inputValue; // 입력된 문자열을 spanText에 설정
+  const spanTimeStamp = document.createElement('span');
+  spanTimeStamp.classList.add('timeStamp');
+  const currentTime = new Date().toLocaleTimeString();
+  spanTimeStamp.textContent = currentTime;
 
-  const spanTimeStamp = document.createElement("span");
-  spanTimeStamp.classList.add("timeStamp");
-
-  // 생성된 span 요소들을 li에 추가
   li.appendChild(spanProfile);
   li.appendChild(spanText);
   li.appendChild(spanTimeStamp);
 
-  // 생성된 li를 ul(Container)에 추가
-  document.getElementById("Container").appendChild(li);
+  container.appendChild(li);
 
-  // 입력창 비우기
   textBox.value = '';
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 초기 데이터 렌더링 로직 (기존 renderData 함수 대신 사용)
+  const initialData = [
+    {
+      type: 'user',
+      message: 'How does OpenAI work?',
+      timestamp: '10:23 AM',
+    },
+    {
+      type: 'assistant',
+      message: 'OpenAI is a machine learning model...',
+      timestamp: '10:24 AM',
+    },
+  ];
+
+  const container = document.getElementById('Container');
+  initialData.forEach(item => {
+    const li = document.createElement('li');
+    li.classList.add('message');
+
+    const spanProfile = document.createElement('span');
+    spanProfile.classList.add('profile');
+    spanProfile.textContent = item.type;
+
+    const spanText = document.createElement('span');
+    spanText.classList.add('text');
+    spanText.textContent = item.message;
+
+    const spanTimeStamp = document.createElement('span');
+    spanTimeStamp.classList.add('timeStamp');
+    spanTimeStamp.textContent = item.timestamp;
+
+    li.appendChild(spanProfile);
+    li.appendChild(spanText);
+    li.appendChild(spanTimeStamp);
+
+    container.appendChild(li);
+  });
+});

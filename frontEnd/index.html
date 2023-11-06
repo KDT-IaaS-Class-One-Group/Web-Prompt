@@ -1,3 +1,5 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,27 +7,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
-  <script src="index.js"></script>
-  <title>Prompt</title>
+  <script src="index.js" defer></script>
+  <title>WEB-PROMPT</title>
 </head>
 <body>
   <div id="root">
     <div id="Header">
-      <!-- 햄버거 메뉴 영역 -->
-      <button type="button" id="Hamburger-Menu">메뉴</button>
-      <h1>🌐프롬프트(0.0)🌐
-      </h1>
-      <button type="button" id="Share-Button">공유</button>
+      <button type="button" id="Hamburger-Menu">☰</button>
+      <h1>🌐 WEB-PROMPT</h1>
+      <button type="button" id="Share-Button">Share</button>
     </div>
     <ul id="Container">
-      <!-- 본문 영역 -->
+      <!-- Content will be dynamically added here -->
     </ul>
     <div id="Footer">
-      <!-- 메시지 작성 영역 -->
-      <!-- <form action="http://localhost:3000/add" method="GET"> -->
-        <input type="text" id="textBox">
-        <input type="submit" value=">" id="submitButton" onclick="addText()"  >
-      <!-- </form> -->
+      <input type="text" id="textBox" placeholder="Enter your message here...">
+      <input type="submit" value=">" id="submitButton">
     </div>
   </div>
 </body>

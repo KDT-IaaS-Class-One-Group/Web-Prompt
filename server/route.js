@@ -1,25 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
 
-// 기본 홈페이지 라우팅
-router.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontEnd', 'index.html'));
-});
-
-// 로그인 페이지 라우팅
-router.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontEnd', 'login.html'));
-});
-
-// 회원가입 페이지 라우팅
-router.get('/signup', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontEnd', 'signup.html'));
-});
-
-// 아이디 및 비밀번호 찾기 페이지 라우팅
-router.get('/forgot', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontEnd', 'forgot.html'));
+// 데이터 라우팅 설정 예시
+router.get('/data', (req, res) => {
+  // 데이터 처리 로직 작성
+  res.json({ message: '데이터 요청 처리 완료' });
 });
 
 module.exports = router;
