@@ -1,19 +1,19 @@
 # Web-Prompt
 
-자료구조
+```plaintext
 WEB-PROMPT
 |-- data
-|   |-- basicData.json
-|   |-- styleGuide.json
+| |-- basicData.json
+| |-- styleGuide.json
 |-- frontEnd
-|   |-- index.css
-|   |-- index.html
-|   |-- index.js
+| |-- index.css
+| |-- index.html
+| |-- index.js
 |-- server
-|   |-- app.js
-|   |-- route.js
+| |-- app.js
+| |-- route.js
 |-- README.md
-
+```
 
 (README.md: Web-Prompt 프로젝트에 대한 설명을 작성한 Markdown 문서)
 
