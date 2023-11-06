@@ -6,52 +6,55 @@ function addText() {
     return;
   }
 
-  // li 태그 생성
-  const li = document.createElement("li");
-  li.classList.add("message");
+  const container = document.getElementById('Container');
 
-  // span 요소 생성 및 클래스 지정
-  const spanProfile = document.createElement("span");
-  spanProfile.classList.add("profile");
-  spanProfile.textContent = "👤(User): ";
+  // user 메시지 생성
+  const userLi = document.createElement("li");
+  userLi.classList.add("message", "user");
+  userLi.style.backgroundColor = "#add8e6"; // 라이트 블루 (#add8e6)
 
-  const spanText = document.createElement("span");
-  spanText.classList.add("text");
-  spanText.textContent = `${inputValue}`;
+  const userSpanProfile = document.createElement("span");
+  userSpanProfile.classList.add("profile");
+  userSpanProfile.textContent = "👤(User): ";
 
-  const spanTimeStamp = document.createElement("span");
-  spanTimeStamp.classList.add("timeStamp");
-  const currentTime = new Date().toLocaleTimeString();
-  spanTimeStamp.textContent = currentTime;
+  const userSpanText = document.createElement("span");
+  userSpanText.classList.add("text");
+  userSpanText.textContent = `${inputValue}`;
 
-  // 생성된 span 요소들을 li에 추가
-  li.appendChild(spanProfile);
-  li.appendChild(spanText);
-  li.appendChild(spanTimeStamp);
+  const userSpanTimeStamp = document.createElement("span");
+  userSpanTimeStamp.classList.add("timeStamp");
+  const userCurrentTime = new Date().toLocaleTimeString();
+  userSpanTimeStamp.textContent = userCurrentTime;
 
-  // 생성된 li를 ul(Container)에 추가
-  document.getElementById("Container").appendChild(li);
+  userLi.appendChild(userSpanProfile);
+  userLi.appendChild(userSpanText);
+  userLi.appendChild(userSpanTimeStamp);
+  container.appendChild(userLi);
 
-  // Assistant의 응답 생성
-  const assistantResponse = document.createElement("span");
-  assistantResponse.classList.add("text");
-  assistantResponse.textContent = "제 생각에 " + inputValue + "에 대한 내용은...";
-  
+  // Assistant 대응 메시지 생성
+  const assistantResponse = "제 생각에 " + inputValue + "에 대한 내용은...";
+
   const assistantLi = document.createElement("li");
-  assistantLi.classList.add("message");
+  assistantLi.classList.add("message", "assistant");
+  assistantLi.style.backgroundColor = "#90ee90"; // 라이트 그린 (#90ee90)
+
   const assistantSpanProfile = document.createElement("span");
   assistantSpanProfile.classList.add("profile");
   assistantSpanProfile.textContent = "🌐(Assistant): ";
+
+  const assistantSpanText = document.createElement("span");
+  assistantSpanText.classList.add("text");
+  assistantSpanText.textContent = assistantResponse;
+
   const assistantSpanTimeStamp = document.createElement("span");
   assistantSpanTimeStamp.classList.add("timeStamp");
-  assistantSpanTimeStamp.textContent = new Date().toLocaleTimeString();
+  const assistantCurrentTime = new Date().toLocaleTimeString();
+  assistantSpanTimeStamp.textContent = assistantCurrentTime;
 
   assistantLi.appendChild(assistantSpanProfile);
-  assistantLi.appendChild(assistantResponse);
+  assistantLi.appendChild(assistantSpanText);
   assistantLi.appendChild(assistantSpanTimeStamp);
-
-  // Assistant의 응답 li를 ul(Container)에 추가
-  document.getElementById("Container").appendChild(assistantLi);
+  container.appendChild(assistantLi);
 
   // 입력창 비우기
   textBox.value = "";
