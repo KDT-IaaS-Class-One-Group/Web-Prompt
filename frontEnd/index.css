@@ -34,8 +34,13 @@ li {
 }
 
 .profile {
+  font-size: x-large;
   font-weight: bold;
   display: block;
+}
+
+.text {
+  font-size: large;
 }
 
 .timeStamp {
