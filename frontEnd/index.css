@@ -35,6 +35,7 @@ li {
 
 .profile {
   font-weight: bold;
+  display: block;
 }
 
 .timeStamp {

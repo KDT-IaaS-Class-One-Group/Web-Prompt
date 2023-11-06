@@ -15,7 +15,7 @@ function addText() {
 
   const userSpanProfile = document.createElement("span");
   userSpanProfile.classList.add("profile");
-  userSpanProfile.textContent = "👤(User): ";
+  userSpanProfile.textContent = "👤(User)";
 
   const userSpanText = document.createElement("span");
   userSpanText.classList.add("text");
@@ -40,7 +40,7 @@ function addText() {
 
   const assistantSpanProfile = document.createElement("span");
   assistantSpanProfile.classList.add("profile");
-  assistantSpanProfile.textContent = "🌐(Assistant): ";
+  assistantSpanProfile.textContent = "🌐(Assistant)";
 
   const assistantSpanText = document.createElement("span");
   assistantSpanText.classList.add("text");
