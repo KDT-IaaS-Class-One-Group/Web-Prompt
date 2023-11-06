@@ -32,7 +32,7 @@ function addText() {
   container.appendChild(userLi);
 
   // Assistant 대응 메시지 생성
-  const assistantResponse = "제 생각에 " + inputValue + "에 대한 내용은...";
+  const assistantResponse = inputValue + "에 대한 제 생각은...";
 
   const assistantLi = document.createElement("li");
   assistantLi.classList.add("message", "assistant");
