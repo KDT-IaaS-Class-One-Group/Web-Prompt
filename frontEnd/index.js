@@ -2,7 +2,14 @@ function addText() {
   // input 태그에 입력된 문자열에 접근
   const textBox = document.getElementById('textBox');
   const inputValue = textBox.value;
-  
+
+  // 입력값이 공백인 경우 함수를 실행하지 않음
+  if (inputValue.trim() === "") {
+    return;
+  }
+
+  // 이하 코드는 입력값이 공백이 아닐 때만 실행됨
+
   // li 태그 생성
   const li = document.createElement("li");
 
