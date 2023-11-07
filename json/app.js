@@ -40,6 +40,6 @@ abc.B = "바꾸기"
 abc.C = "덮어쓰기"
 
 fs.writeFileSync("first-json.json", abcJSON);
-console.log(abc.A);
-console.log(abc.B);
-console.log(abc.C);
+console.log(abc.A); // 바꿔보자
+console.log(abc.B); // 바꾸기
+console.log(abc.C); // 덮어쓰기
