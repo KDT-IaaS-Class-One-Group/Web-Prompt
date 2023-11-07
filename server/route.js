@@ -1,10 +1,21 @@
 const express = require('express');
+const path = require('path');
 const router = express.Router();
 
-// 데이터 라우팅 설정 예시
-router.get('/data', (req, res) => {
-  // 데이터 처리 로직 작성
-  res.json({ message: '데이터 요청 처리 완료' });
+router.get('/home', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontEnd', 'home.html'));
+});
+
+router.get('/profile', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontEnd', 'profile.html'));
+});
+
+router.get('/settings', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontEnd', 'settings.html'));
+});
+
+router.get('/logout', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontEnd', 'logout.html'));
 });
 
 module.exports = router;
