@@ -68,3 +68,22 @@ function addText() {
   // 입력창 비우기
   textBox.value = "";
 }
+
+// 햄버거 메뉴
+const sideBar = document.createElement("div");
+sideBar.classList.add("sideBar");
+
+const menuItems = ["Home", "Profile", "Settings", "Logout"];
+menuItems.forEach((item) => {
+  const button = document.createElement("button");
+  button.textContent = item;
+  sideBar.appendChild(button);
+});
+
+const root = document.getElementById("root");
+root.appendChild(sideBar);
+
+const hamburgerMenu = document.getElementById("Hamburger-Menu");
+hamburgerMenu.addEventListener("click", () => {
+  sideBar.classList.toggle("open");
+});
