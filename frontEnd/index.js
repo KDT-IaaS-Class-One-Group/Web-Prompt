@@ -158,39 +158,3 @@ function navigateToHome() {
     document.body.style.overflow = 'auto';
   });
 }
-
-
-
-// // 버튼에 클릭 이벤트 리스너 등록 함수
-// function addButtonClickListener(buttonId, page) {
-//   document.getElementById(buttonId).addEventListener('click', () => navigateToPage(page));
-// }
-
-// // 각 버튼에 클릭 이벤트 추가
-// addButtonClickListener('homeButton', 'home');
-// addButtonClickListener('profileButton', 'profile');
-// addButtonClickListener('settingsButton', 'settings');
-// addButtonClickListener('logoutButton', 'logout');
-
-// // DOMContentLoaded 이벤트 리스너 등록
-// document.addEventListener('DOMContentLoaded', () => {
-//   const sideBar = document.querySelector('.sideBar');
-//   const menuItems = ['Home', 'Profile', 'Settings', 'Logout'];
-//   const hamburgerMenu = document.getElementById('Hamburger-Menu');
-
-//   menuItems.forEach(item => {
-//     const button = document.getElementById(`${item.toLowerCase()}Button`);
-//     button.textContent = item;
-//     sideBar.appendChild(button);
-//     addButtonClickListener(`${item.toLowerCase()}Button`, item.toLowerCase());
-//   });
-
-//   function toggleSideBar() {
-//     sideBar.classList.toggle('open');
-//     document.body.style.overflow = sideBar.classList.contains('open') ? 'hidden' : 'auto';
-//   }
-
-//   const closeButton = document.getElementById('Close-Button');
-//   hamburgerMenu.addEventListener('click', toggleSideBar);
-//   closeButton.addEventListener('click', toggleSideBar);
-// });
