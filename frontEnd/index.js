@@ -8,6 +8,11 @@ function addText() {
 
   const container = document.getElementById('Container');
 
+  // 현재 시간을 24시간 형식으로 표시하기 위한 변수들
+  const currentTime = new Date();
+  const userHours = currentTime.getHours().toString().padStart(2, '0');
+  const userMinutes = currentTime.getMinutes().toString().padStart(2, '0');
+
   // user 메시지 생성
   const userLi = document.createElement("li");
   userLi.classList.add("message", "user");
@@ -15,7 +20,7 @@ function addText() {
 
   const userSpanProfile = document.createElement("span");
   userSpanProfile.classList.add("profile");
-  userSpanProfile.textContent = "👤 User";
+  userSpanProfile.textContent = "👤 User: ";
 
   const userSpanText = document.createElement("span");
   userSpanText.classList.add("text");
@@ -23,8 +28,8 @@ function addText() {
 
   const userSpanTimeStamp = document.createElement("span");
   userSpanTimeStamp.classList.add("timeStamp");
-  const userCurrentTime = new Date().toLocaleTimeString();
-  userSpanTimeStamp.textContent = userCurrentTime;
+  userSpanTimeStamp.style.float = "right"; // 우측 정렬
+  userSpanTimeStamp.textContent = `${userHours}:${userMinutes}`; // 24시간 형식으로 표시
 
   userLi.appendChild(userSpanProfile);
   userLi.appendChild(userSpanText);
@@ -34,13 +39,17 @@ function addText() {
   // Assistant 대응 메시지 생성
   const assistantResponse = inputValue + "에 대한 제 생각은...";
 
+  // 현재 시간을 24시간 형식으로 표시하기 위한 변수들
+  const assistantHours = currentTime.getHours().toString().padStart(2, '0');
+  const assistantMinutes = currentTime.getMinutes().toString().padStart(2, '0');
+
   const assistantLi = document.createElement("li");
   assistantLi.classList.add("message", "assistant");
   assistantLi.style.backgroundColor = "#90ee90"; // 라이트 그린 (#90ee90)
 
   const assistantSpanProfile = document.createElement("span");
   assistantSpanProfile.classList.add("profile");
-  assistantSpanProfile.textContent = "🌐 Assistant";
+  assistantSpanProfile.textContent = "🌐 Assistant: ";
 
   const assistantSpanText = document.createElement("span");
   assistantSpanText.classList.add("text");
@@ -48,8 +57,8 @@ function addText() {
 
   const assistantSpanTimeStamp = document.createElement("span");
   assistantSpanTimeStamp.classList.add("timeStamp");
-  const assistantCurrentTime = new Date().toLocaleTimeString();
-  assistantSpanTimeStamp.textContent = assistantCurrentTime;
+  assistantSpanTimeStamp.style.float = "right"; // 우측 정렬
+  assistantSpanTimeStamp.textContent = `${assistantHours}:${assistantMinutes}`; // 24시간 형식으로 표시
 
   assistantLi.appendChild(assistantSpanProfile);
   assistantLi.appendChild(assistantSpanText);
