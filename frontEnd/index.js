@@ -100,32 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sideBar.style.height = `calc(100vh - ${headerHeight + footerHeight}px)`;
 
-  menuItems.forEach((item) => {
-    const button = document.getElementById(`${item.toLowerCase()}Button`);
-    button.textContent = item;
-    sideBar.appendChild(button);
-  });
-
-  function toggleSideBar() {
-    sideBar.classList.toggle("open");
-    if (sideBar.classList.contains("open")) {
-      document.body.style.overflow = "hidden"; // 페이지 스크롤을 막음
-    } else {
-      document.body.style.overflow = "auto"; // 페이지 스크롤을 허용
-    }
-  }
-
-  const closeButton = document.getElementById("Close-Button");
-  hamburgerMenu.addEventListener("click", toggleSideBar);
-  closeButton.addEventListener("click", toggleSideBar);
-
-  menuItems.forEach((item) => {
-    const button = document.getElementById(`${item.toLowerCase()}Button`);
-    button.addEventListener("click", () => {
-      window.location.href = `/pages/${item.toLowerCase()}`;
-      toggleSideBar();
-    });
-  });
+  console.log("Sidebar height set:", sideBar.style.height);
 });
 
 // 페이지 이동 요청 함수
