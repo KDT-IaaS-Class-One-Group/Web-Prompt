@@ -103,30 +103,61 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-  function navigateToPage(page) {
+function navigateToPage(page) {
   fetch(`/pages/${page}.html`)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.text();
-  })
-  .then(html => {
-    document.body.innerHTML = html;
-  })
-  .catch(error => console.error('Error:', error));
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.body.innerHTML = html;
+    })
+    .catch(error => console.error('Error:', error));
+
   // 햄버거 메뉴 토글
+  const hamburgerMenu = document.getElementById('Hamburger-Menu');
+  const sideBar = document.querySelector('.sideBar');
   hamburgerMenu.addEventListener('click', () => {
     sideBar.classList.toggle('open');
     document.body.style.overflow = sideBar.classList.contains('open') ? 'hidden' : 'auto';
   });
-  
+
   const closeButton = document.getElementById('Close-Button');
   closeButton.addEventListener('click', () => {
     sideBar.classList.remove('open');
     document.body.style.overflow = 'auto';
-  })
-  }
+  });
+}
+
+function navigateToHome() {
+  fetch('/pages/home.html')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text();
+    })
+    .then(html => {
+      document.body.innerHTML = html;
+    })
+    .catch(error => console.error('Error:', error));
+
+  // 햄버거 메뉴 토글
+  const hamburgerMenu = document.getElementById('Hamburger-Menu');
+  const sideBar = document.querySelector('.sideBar');
+  hamburgerMenu.addEventListener('click', () => {
+    sideBar.classList.toggle('open');
+    document.body.style.overflow = sideBar.classList.contains('open') ? 'hidden' : 'auto';
+  });
+
+  const closeButton = document.getElementById('Close-Button');
+  closeButton.addEventListener('click', () => {
+    sideBar.classList.remove('open');
+    document.body.style.overflow = 'auto';
+  });
+}
 
 
 
