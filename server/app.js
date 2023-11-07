@@ -7,10 +7,10 @@ const port = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// 정적 파일 제공을 위한 미들웨어 설정 (상대 경로 사용)
+// 정적 파일 제공을 위한 미들웨어 설정 (정적 파일은 frontEnd 폴더에 있음)
 app.use(express.static(path.join(__dirname, '..', 'frontEnd')));
 
-// 라우팅 설정
+// 라우팅 설정 (routes 폴더에 있는 route.js 파일 사용)
 const route = require('./route');
 app.use('/api', route);
 
