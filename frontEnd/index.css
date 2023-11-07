@@ -23,6 +23,8 @@
   position: fixed;
   left: -25%;
   width: 25%;
+  margin-top: 4vh;
+  height: 15vh;
   background-color: #333333;
   color: #ffffff;
   padding: 20px;
@@ -53,7 +55,7 @@
   color: #ffffff;
   font-family: "Arial, sans-serif";
   cursor: pointer;
-  font-size: 16px;
+  font-size: large;
 }
 
 /* Main Content Styles */
