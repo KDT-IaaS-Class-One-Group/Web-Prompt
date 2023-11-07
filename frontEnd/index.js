@@ -74,14 +74,6 @@ const hamburgerMenu = document.getElementById("Hamburger-Menu");
 const sideBar = document.createElement("div");
 sideBar.classList.add("sideBar");
 
-const menuItems = ["Home", "Profile", "Settings", "Logout"];
-
-menuItems.forEach((item) => {
-  const button = document.createElement("button");
-  button.textContent = item;
-  sideBar.appendChild(button);
-});
-
 const closeButton = document.createElement("button");
 closeButton.innerHTML = "&#9776;"; // ☰ 아이콘
 closeButton.classList.add("hamburgerIcon");
@@ -93,61 +85,81 @@ const toggleSideBar = () => {
 
 hamburgerMenu.addEventListener("click", toggleSideBar);
 
-closeButton.addEventListener("click", toggleSideBar);
-
-document.addEventListener("DOMContentLoaded", () => {
-  const sideBar = document.querySelector(".sideBar");
-
-  sideBar.style.height = `calc(100vh - ${headerHeight + footerHeight}px)`;
-
-  console.log("Sidebar height set:", sideBar.style.height);
-});
-
-// 페이지 이동 요청 함수
-function navigateToPage(page) {
-  fetch(`/${page}`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      return response.text();
-    })
-    .then(html => {
-      document.body.innerHTML = html;
-    })
-    .catch(error => console.error('Error:', error));
-}
-
-// 버튼에 클릭 이벤트 리스너 등록 함수
-function addButtonClickListener(buttonId, page) {
-  document.getElementById(buttonId).addEventListener('click', () => navigateToPage(page));
-}
-
-// 각 버튼에 클릭 이벤트 추가
-addButtonClickListener('homeButton', 'home');
-addButtonClickListener('profileButton', 'profile');
-addButtonClickListener('settingsButton', 'settings');
-addButtonClickListener('logoutButton', 'logout');
-
-// DOMContentLoaded 이벤트 리스너 등록
 document.addEventListener('DOMContentLoaded', () => {
   const sideBar = document.querySelector('.sideBar');
   const menuItems = ['Home', 'Profile', 'Settings', 'Logout'];
-  const hamburgerMenu = document.getElementById('Hamburger-Menu');
-
+// 사이드바에 들어갈 메뉴 버튼에 각각 ID 부여
   menuItems.forEach(item => {
-    const button = document.getElementById(`${item.toLowerCase()}Button`);
+    const button = document.createElement('button');
     button.textContent = item;
+    button.id = `${item.toLowerCase()}Button`; // 각 버튼에 ID 부여
+    button.classList.add('menuItem'); // 버튼에 클래스 추가
     sideBar.appendChild(button);
-    addButtonClickListener(`${item.toLowerCase()}Button`, item.toLowerCase());
+    // 각 버튼에 클릭 이벤트 추가
+    button.addEventListener('click', () => {
+      navigateToPage(item.toLowerCase()); // 각 버튼에 맞는 페이지로 이동하는 함수 호출
+    });
   });
+});
 
-  function toggleSideBar() {
+
+  function navigateToPage(page) {
+  fetch(`/pages/${page}.html`)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.text();
+  })
+  .then(html => {
+    document.body.innerHTML = html;
+  })
+  .catch(error => console.error('Error:', error));
+  // 햄버거 메뉴 토글
+  hamburgerMenu.addEventListener('click', () => {
     sideBar.classList.toggle('open');
     document.body.style.overflow = sideBar.classList.contains('open') ? 'hidden' : 'auto';
+  });
+  
+  const closeButton = document.getElementById('Close-Button');
+  closeButton.addEventListener('click', () => {
+    sideBar.classList.remove('open');
+    document.body.style.overflow = 'auto';
+  })
   }
 
-  const closeButton = document.getElementById('Close-Button');
-  hamburgerMenu.addEventListener('click', toggleSideBar);
-  closeButton.addEventListener('click', toggleSideBar);
-});
+
+
+// // 버튼에 클릭 이벤트 리스너 등록 함수
+// function addButtonClickListener(buttonId, page) {
+//   document.getElementById(buttonId).addEventListener('click', () => navigateToPage(page));
+// }
+
+// // 각 버튼에 클릭 이벤트 추가
+// addButtonClickListener('homeButton', 'home');
+// addButtonClickListener('profileButton', 'profile');
+// addButtonClickListener('settingsButton', 'settings');
+// addButtonClickListener('logoutButton', 'logout');
+
+// // DOMContentLoaded 이벤트 리스너 등록
+// document.addEventListener('DOMContentLoaded', () => {
+//   const sideBar = document.querySelector('.sideBar');
+//   const menuItems = ['Home', 'Profile', 'Settings', 'Logout'];
+//   const hamburgerMenu = document.getElementById('Hamburger-Menu');
+
+//   menuItems.forEach(item => {
+//     const button = document.getElementById(`${item.toLowerCase()}Button`);
+//     button.textContent = item;
+//     sideBar.appendChild(button);
+//     addButtonClickListener(`${item.toLowerCase()}Button`, item.toLowerCase());
+//   });
+
+//   function toggleSideBar() {
+//     sideBar.classList.toggle('open');
+//     document.body.style.overflow = sideBar.classList.contains('open') ? 'hidden' : 'auto';
+//   }
+
+//   const closeButton = document.getElementById('Close-Button');
+//   hamburgerMenu.addEventListener('click', toggleSideBar);
+//   closeButton.addEventListener('click', toggleSideBar);
+// });
