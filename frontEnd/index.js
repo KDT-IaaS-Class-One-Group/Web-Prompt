@@ -70,20 +70,37 @@ function addText() {
 }
 
 // 햄버거 메뉴
+const hamburgerMenu = document.getElementById("Hamburger-Menu");
 const sideBar = document.createElement("div");
 sideBar.classList.add("sideBar");
 
 const menuItems = ["Home", "Profile", "Settings", "Logout"];
+
 menuItems.forEach((item) => {
   const button = document.createElement("button");
   button.textContent = item;
   sideBar.appendChild(button);
 });
 
-const root = document.getElementById("root");
-root.appendChild(sideBar);
+const closeButton = document.createElement("button");
+closeButton.innerHTML = "&#9776;"; // ☰ 아이콘
+closeButton.classList.add("hamburgerIcon");
+hamburgerMenu.appendChild(sideBar);
 
-const hamburgerMenu = document.getElementById("Hamburger-Menu");
-hamburgerMenu.addEventListener("click", () => {
+const toggleSideBar = () => {
   sideBar.classList.toggle("open");
+};
+
+hamburgerMenu.addEventListener("click", toggleSideBar);
+
+closeButton.addEventListener("click", toggleSideBar);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const headerHeight = document.getElementById("Header").offsetHeight;
+  const footerHeight = document.getElementById("Footer").offsetHeight;
+  const sideBar = document.querySelector(".sideBar");
+
+  sideBar.style.height = `calc(100vh - ${headerHeight + footerHeight}px)`;
+
+  console.log("Sidebar height set:", sideBar.style.height);
 });

@@ -21,19 +21,29 @@
 
 .sideBar {
   position: fixed;
-  top: 0;
-  left: -25%; /* 초기에는 화면 왼쪽 밖에 위치 */
-  width: 25%; /* 화면의 1/4만큼의 너비 */
-  height: 100vh; /* 화면 전체 높이 */
+  left: -25%;
+  width: 25%;
   background-color: #333333;
   color: #ffffff;
   padding: 20px;
-  transition: left 0.3s ease; /* 좌측 이동에 대한 0.3초의 트랜지션 효과 적용 */
+  transition: left 0.3s ease;
 }
 
 .sideBar.open {
   left: 0; /* 사이드바를 열 때 화면 왼쪽으로 이동하여 보이도록 함 */
 }
+
+.closeButton {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
 
 .sideBar button {
   display: block;
