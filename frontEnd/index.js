@@ -149,3 +149,17 @@ function navigateToPage(page) {
     document.body.style.overflow = 'auto';
   });
 }
+
+// right-Menu에 이벤트 추가
+document.addEventListener('DOMContentLoaded', () => {
+  const rightMenuButton = document.getElementById('right-Menu');
+  const rightSideBar = document.getElementById('rightSideBar');
+  
+  // right-Menu 버튼을 클릭했을 때 rightSideBar에 show 클래스를 토글하는 함수
+  function toggleRightMenu() {
+    rightSideBar.classList.toggle('show'); // 'show' 클래스를 토글합니다.
+  }
+
+  // right-Menu 버튼에 클릭 이벤트를 추가합니다.
+  rightMenuButton.addEventListener('click', toggleRightMenu);
+});
