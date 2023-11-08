@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+const fs = require("fs");
 
 // 각 페이지에 대한 라우트 설정
 router.get('/home', (req, res) => {
@@ -22,8 +23,8 @@ router.get('/logout', (req, res) => {
 
 // POST 요청 처리
 router.post('/submit', (req, res) => {
-  const inputData = req.body.inputText;
-  console.log('사용자 입력 내용:', inputData);
+  const inputValue = req.body.inputText;
+  console.log('사용자 입력 내용:', inputValue);
   res.json({ message: 'POST 요청을 받았습니다!' });
 });
 
