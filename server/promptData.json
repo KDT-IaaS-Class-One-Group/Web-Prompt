@@ -1,5 +1,8 @@
 [
   {
     "inputValue": "문자열이 도착하면 성공!"
+  },
+  {
+    "inputValue": "main 브랜치에서 확인!"
   }
 ]
