@@ -97,28 +97,34 @@ li {
 #Footer {
   position: fixed;
   bottom: 0;
-  background-color: #FF5733; /* Primary color */
-  color: #F5F5F5; /* Background color */
+  background-color: #FF5733;
+  color: #F5F5F5;
   padding: 20px;
   display: flex;
   align-items: center;
   width: 100%;
-  box-sizing: border-box; /* 추가된 부분 */
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
 }
 
 #textBox {
-  flex: 1;
+  width: 80vw;
   margin-right: 10px;
-  padding: 5px;
-  border: none;
+  padding: 10px; /* 수정된 부분: 입력창의 내부 여백을 늘림 */
+  border: 1px solid #ccc; /* 수정된 부분: 테두리 추가 */
   border-radius: 5px;
-  box-sizing: border-box; /* 추가된 부분 */
+  box-sizing: border-box;
+  font-size: 16px; /* 수정된 부분: 글꼴 크기 조정 */
 }
 
 #submitButton {
-  background-color: transparent;
+  background-color: #4CAF50; /* 수정된 부분: 제출 버튼의 배경색을 변경 */
   border: none;
-  color: #F5F5F5; /* Background color */
-  font-family: "Arial, sans-serif"; /* Main font */
+  color: #F5F5F5;
+  font-family: "Arial, sans-serif";
   cursor: pointer;
+  padding: 10px 20px; /* 수정된 부분: 버튼의 내부 여백을 늘림 */
+  border-radius: 5px;
+  font-size: 16px; /* 수정된 부분: 글꼴 크기 조정 */
 }
