@@ -25,7 +25,6 @@ router.get('/logout', (req, res) => {
 router.post('/submit', (req, res) => {
   const inputValue = req.body.inputText;
   console.log('사용자 입력 내용:', inputValue);
-  res.json({ message: 'POST 요청을 받았습니다!' });
 
   // json 파일을 읽고 편집하는 기능 추가
 
@@ -67,6 +66,7 @@ router.post('/submit', (req, res) => {
     });
   });
 });
+
 
 
 module.exports = router;
