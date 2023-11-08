@@ -1,10 +1,9 @@
 /* index.css */
-
-/* Header Styles */
+/* Header 스타일 */
 #Header {
-  background-color: #FF5733; /* Primary color */
-  color: #F5F5F5; /* Background color */
-  font-family: "Arial, sans-serif"; /* Main font */
+  background-color: #FF5733; 
+  color: #F5F5F5; 
+  font-family: "Arial, sans-serif"; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,8 +13,8 @@
 #Hamburger-Menu, #Share-Button {
   background-color: transparent;
   border: none;
-  color: #F5F5F5; /* Background color */
-  font-family: "Arial, sans-serif"; /* Main font */
+  color: #F5F5F5; 
+  font-family: "Arial, sans-serif";
   cursor: pointer;
 }
 
@@ -33,7 +32,7 @@
 }
 
 .sideBar.open {
-  left: 0; /* 사이드바를 열 때 화면 왼쪽으로 이동하여 보이도록 함 */
+  left: 0;
   width: 10%;
 }
 
@@ -60,17 +59,17 @@
   font-size: large;
 }
 
-/* Main Content Styles */
+/* Main Content 스타일 */
 #Container {
   list-style-type: none;
   padding: 20px;
-  background-color: #F5F5F5; /* Background color */
+  background-color: #F5F5F5; 
 }
 
 li {
   margin-bottom: 10px;
   padding: 10px;
-  background-color: #FFFFFF; /* Secondary color */
+  background-color: #FFFFFF; 
   border-radius: 5px;
 }
 
@@ -85,45 +84,44 @@ li {
 }
 
 .timeStamp {
-  font-size: 14px; /* 글꼴 크기 조정 */
-  font-weight: bold; /* 굵은 글꼴 적용 */
-  text-align: right; /* 오른쪽 정렬 */
-  font-family: "Arial, sans-serif"; /* 다른 글꼴 패밀리로 변경 */
-  background-color: rgba(230, 242, 255, 0.5); /* Web-Prompt의 프라이머리 컬러와 일치하는 배경색 (투명도 0.9) */
-  color: #333333; /* 배경색과 대비되는 텍스트 색상 */
-  padding: 5px 10px; /* 내부 여백 추가 */
-  border-radius: 5px; /* 둥근 테두리 적용 */
+  font-size: 14px;
+  font-weight: bold;
+  text-align: right;
+  font-family: "Arial, sans-serif";
+  background-color: rgba(230, 242, 255, 0.5);
+  color: #333333; 
+  padding: 5px 10px; 
+  border-radius: 5px;
 }
-/* index.css */
 
 #rightSideBar {
   position: fixed;
-  right: -300px; /* 초기에는 화면 밖에 위치하도록 설정 */
+  right: -300px;
   width: 300px;
   height: 80vh;
-  background-color: #f0f0f0; /* 배경색 설정 */
-  transition: right 0.3s ease; /* 움직임에 트랜지션 효과 추가 */
+  background-color: #f0f0f0; 
+  transition: right 0.3s ease;
   z-index: 1;
-  overflow-y: auto; /* 내용이 넘칠 때 스크롤이 나타나도록 설정 */
+  overflow-y: auto;
 }
 
 #rightSideBar.show {
-  right: 0; /* show 클래스가 추가됐을 때, 화면 안으로 이동하도록 설정 */
+  right: 0; 
   width: 25vw;
 }
 
 #rightSideBar span {
-  display: block; /* 각 span 요소를 블록 레벨로 표시하여 줄바꿈되도록 함 */
-  padding: 10px; /* 적절한 여백 추가 */
-  border-bottom: 1px solid #ccc; /* span 요소 사이에 구분선 추가 */
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #ccc; 
 }
 
 #rightSideBar span:last-child {
-  border-bottom: none; /* 마지막 span 요소의 하단 구분선 제거 */
+  border-bottom: none;
 }
 
 
-/* 오른쪽 메뉴 버튼 스타일 */
+
 #right-Menu {
   display: flex;
   background-color: #FF5733;
@@ -136,7 +134,7 @@ li {
   z-index: 2;
 }
 
-/* Footer Styles */
+/* Footer 스타일 */
 #Footer {
   position: fixed;
   bottom: 0;
@@ -154,20 +152,20 @@ li {
 #textBox {
   width: 80vw;
   margin-right: 10px;
-  padding: 10px; /* 수정된 부분: 입력창의 내부 여백을 늘림 */
-  border: 1px solid #ccc; /* 수정된 부분: 테두리 추가 */
+  padding: 10px;
+  border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
-  font-size: 16px; /* 수정된 부분: 글꼴 크기 조정 */
+  font-size: 16px;
 }
 
 #submitButton {
-  background-color: #4CAF50; /* 수정된 부분: 제출 버튼의 배경색을 변경 */
+  background-color: #4CAF50; 
   border: none;
   color: #F5F5F5;
   font-family: "Arial, sans-serif";
   cursor: pointer;
-  padding: 10px 20px; /* 수정된 부분: 버튼의 내부 여백을 늘림 */
+  padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;
   font-weight: bolder;
