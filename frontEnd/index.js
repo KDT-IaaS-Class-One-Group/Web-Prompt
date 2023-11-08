@@ -65,6 +65,25 @@ function addText() {
   assistantLi.appendChild(assistantSpanTimeStamp);
   container.appendChild(assistantLi);
 
+  // textBox에 입력한 내용을 
+  console.log("사용자 입력 내용:", inputValue);
+
+  fetch('/api/submit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ inputText: inputValue }),
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data); // 서버로부터 받은 응답을 콘솔에 출력
+    // 여기에서 적절한 동작을 수행할 수 있음
+  })
+  .catch(error => {
+    console.error('에러 발생:', error);
+  });
+
   // 입력창 비우기
   textBox.value = "";
 }
