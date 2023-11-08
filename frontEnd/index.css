@@ -25,6 +25,7 @@
   width: 25%;
   margin-top: 4vh;
   height: 15vh;
+  width: 5vw;
   background-color: #333333;
   color: #ffffff;
   padding: 20px;
@@ -103,12 +104,24 @@ li {
   background-color: #f0f0f0; /* 배경색 설정 */
   transition: right 0.3s ease; /* 움직임에 트랜지션 효과 추가 */
   z-index: 1;
+  overflow-y: auto; /* 내용이 넘칠 때 스크롤이 나타나도록 설정 */
 }
 
 #rightSideBar.show {
   right: 0; /* show 클래스가 추가됐을 때, 화면 안으로 이동하도록 설정 */
   width: 25vw;
 }
+
+#rightSideBar span {
+  display: block; /* 각 span 요소를 블록 레벨로 표시하여 줄바꿈되도록 함 */
+  padding: 10px; /* 적절한 여백 추가 */
+  border-bottom: 1px solid #ccc; /* span 요소 사이에 구분선 추가 */
+}
+
+#rightSideBar span:last-child {
+  border-bottom: none; /* 마지막 span 요소의 하단 구분선 제거 */
+}
+
 
 /* 오른쪽 메뉴 버튼 스타일 */
 #right-Menu {

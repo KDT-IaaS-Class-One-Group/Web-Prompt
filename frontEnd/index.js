@@ -65,7 +65,7 @@ function addText() {
   assistantLi.appendChild(assistantSpanTimeStamp);
   container.appendChild(assistantLi);
 
-  // textBox에 입력한 내용을 
+  // textBox에 입력한 내용을 POST로 전송
   console.log("사용자 입력 내용:", inputValue);
 
   fetch('/api/submit', {
@@ -83,6 +83,9 @@ function addText() {
   .catch(error => {
     console.error('에러 발생:', error);
   });
+
+
+  addToSideBar();
 
   // 입력창 비우기
   textBox.value = "";
@@ -162,4 +165,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // right-Menu 버튼에 클릭 이벤트를 추가합니다.
   rightMenuButton.addEventListener('click', toggleRightMenu);
-});
+
+  });
+
+  function addToSideBar() {
+    const textBox = document.getElementById('textBox');
+    const inputValue = textBox.value.trim();
+    const rightSideBar = document.getElementById('rightSideBar');
+    
+    const span = document.createElement("span");
+    span.textContent = inputValue;
+  
+    rightSideBar.appendChild(span);
+  }
+  
