@@ -20,4 +20,11 @@ router.get('/logout', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'frontEnd', 'pages', 'logout.html'));
 });
 
+// POST 요청 처리
+router.post('/submit', (req, res) => {
+  const inputData = req.body.inputText;
+  console.log('사용자 입력 내용:', inputData);
+  res.json({ message: 'POST 요청을 받았습니다!' });
+});
+
 module.exports = router;
