@@ -21,9 +21,11 @@
       <!-- 동적으로 li 추가 -->
     </ul>
     <div id="Footer">
-      <input type="text" id="textBox" placeholder="메시지를 입력하세요...">
-      <!-- 클릭 이벤트 추가 -->
-      <input type="submit" value=">" id="submitButton" onclick="addText()">
+      <form action="/submit" method="post">
+        <input type="text" id="textBox" placeholder="메시지를 입력하세요...">
+        <!-- 클릭 이벤트 추가 -->
+        <input type="submit" value=">" id="submitButton" onclick="addText()" >
+      </form>
     </div>
   </div>
 </body>

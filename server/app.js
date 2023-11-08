@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, '..', 'frontEnd')));
 
 // 라우팅 설정 (routes 폴더에 있는 route.js 파일 사용)
 const route = require('./route');
-app.use('/api', route);
+app.use('/api', route); // 미들웨어 실행 로직
 
 // 서버 시작
 const server = app.listen(port, () => {
