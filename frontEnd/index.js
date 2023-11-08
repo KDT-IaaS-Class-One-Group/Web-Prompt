@@ -84,7 +84,6 @@ function addText() {
     console.error('에러 발생:', error);
   });
 
-
   addToSideBar();
 
   // 입력창 비우기
@@ -175,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const span = document.createElement("span");
     span.textContent = inputValue;
-  
     rightSideBar.appendChild(span);
   }
   
