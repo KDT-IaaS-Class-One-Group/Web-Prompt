@@ -149,29 +149,3 @@ function navigateToPage(page) {
     document.body.style.overflow = 'auto';
   });
 }
-
-// Footer의 자식 요소로 사용자 정보를 나타내는 영역 추가
-const userStatusContainer = document.createElement("div");
-userStatusContainer.classList.add("userStatus");
-
-// 사용자 정보 표시를 위한 요소들 생성
-const userNameElement = document.createElement("span");
-userNameElement.classList.add("userName");
-userNameElement.textContent = "사용자 이름"; // 사용자 이름 설정
-
-const userStatusElement = document.createElement("span");
-userStatusElement.classList.add("status");
-userStatusElement.textContent = "온라인"; // 사용자 상태 설정
-
-const avatarElement = document.createElement("img");
-avatarElement.classList.add("avatar");
-avatarElement.src = "path/to/avatar.jpg"; // 아바타 이미지 경로 설정
-
-// 생성한 요소들을 userStatusContainer에 추가
-userStatusContainer.appendChild(userNameElement);
-userStatusContainer.appendChild(userStatusElement);
-userStatusContainer.appendChild(avatarElement);
-
-// Footer에 userStatusContainer를 추가
-const footer = document.getElementById("Footer");
-footer.insertBefore(userStatusContainer, document.getElementById("textBox"));

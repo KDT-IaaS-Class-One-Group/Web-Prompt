@@ -99,7 +99,7 @@ li {
   bottom: 0;
   background-color: #FF5733;
   color: #F5F5F5;
-  padding: 20px;
+  padding: 10px;
   display: flex;
   align-items: center;
   width: 100%;
@@ -126,5 +126,19 @@ li {
   cursor: pointer;
   padding: 10px 20px; /* 수정된 부분: 버튼의 내부 여백을 늘림 */
   border-radius: 5px;
-  font-size: 16px; /* 수정된 부분: 글꼴 크기 조정 */
+  font-size: 16px;
+  font-weight: bolder;
+}
+#userStatus {
+  width: 10vw;
+  height: 2.5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#userStatus div {
+  display: flex;
+  font-size: large;
+  font-weight: bolder;
+  color:rgba(230, 242, 255, 0.8);
 }
