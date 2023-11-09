@@ -116,13 +116,15 @@ const closeButton = document.createElement("button");
 closeButton.classList.add("hamburgerIcon");
 hamburgerMenu.appendChild(sideBar);
 
-const toggleSideBar = () => {
+function toggleSideBar() {
   sideBar.classList.toggle("open");
 };
 
-hamburgerMenu.addEventListener("click", toggleSideBar);
+hamburgerMenu.addEventListener("click", toggleSideBar); 
+//! 이벤트 리스너에 함수를 호출할 때, 괄호를 쓰지 않는 이유: toggleSideBar()와 같이 입력하면 즉시 실행되기 때문
+//* 이름만 전달하면 함수 자체가 이벤트 리스너에 전달되어 이벤트가 발생했을 때, 함수를 실행한다.
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { //* DOMContentLoaded는 완전히 HTML 문서가 로드되면 실행하는 문서 로딩 이벤트
   const sideBar = document.querySelector('.sideBar');
   const menuItems = ['Home', 'Profile', 'Settings', 'Logout'];
 // 사이드바에 들어갈 메뉴 버튼에 각각 ID 부여
