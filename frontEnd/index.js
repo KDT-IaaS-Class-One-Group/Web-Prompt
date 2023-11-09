@@ -1,11 +1,11 @@
 function addText() {
   const textBox = document.getElementById('textBox');
-  const inputValue = textBox.value.trim();
+  const inputValue = textBox.value.trim(); // trim(): 문자열 앞뒤의 공백을 제거하는 메서드
 
+  // 프롬프트 입력란이 공백이면 함수를 실행하지 않고 return
   if (inputValue === "") {
     return;
   }
-
   const container = document.getElementById('Container');
 
   // 현재 시간을 24시간 형식으로 표시하기 위한 변수들
@@ -13,7 +13,7 @@ function addText() {
   const userHours = currentTime.getHours().toString().padStart(2, '0');
   const userMinutes = currentTime.getMinutes().toString().padStart(2, '0');
 
-  // user 메시지 생성
+  // user 메시지를 li태그로 생성
   const userLi = document.createElement("li");
   userLi.classList.add("message", "user");
   userLi.style.backgroundColor = "#add8e6"; // 라이트 블루 (#add8e6)
