@@ -50,7 +50,9 @@ router.post('/submit', (req, res) => {
     jsonData.push(newEntry);
 
     // JSON 데이터를 다시 JSON 문자열로 변환
-    const updatedJsonData = JSON.stringify(jsonData, null, 2); //? 
+    const updatedJsonData = JSON.stringify(jsonData, null, 2); //? 이건 모르겠는데 없으면 오류가 난다.
+    // jsonData를 null로 전달하고, 들여쓰기를 2칸하고 난 뒤에 작성한다는데
+    // null로 왜 전달하는지를 모르겠고, 들여쓰기도 왜 하는지 당위성을 알 수 없다.
 
     // 파일에 쓰기 (비동기 방식)
     fs.writeFile(filePath, updatedJsonData, 'utf8', (err) => {
