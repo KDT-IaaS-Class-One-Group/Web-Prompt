@@ -21,7 +21,7 @@
 .sideBar {
   position: fixed;
   left: -25%;
-  width: 25%;
+  width: 10%;
   margin-top: 4vh;
   height: 15vh;
   width: 5vw;
@@ -61,7 +61,7 @@
 
 /* Main Content 스타일 */
 #Container {
-  list-style-type: none;
+  list-style-type: none; /* 리스트 마커 숨김 */
   padding: 20px;
   background-color: #F5F5F5; 
 }
