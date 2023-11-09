@@ -164,21 +164,22 @@ function navigateToPage(page) {
     });
   }
 
-// right-Menu에 이벤트 추가
+// rightMenu에 이벤트 추가
 document.addEventListener('DOMContentLoaded', () => {
   const rightMenuButton = document.getElementById('rightMenu');
   const rightSideBar = document.getElementById('rightSideBar');
   
   // right-Menu 버튼을 클릭했을 때 rightSideBar에 show 클래스를 토글하는 함수
   function toggleRightMenu() {
-    rightSideBar.classList.toggle('show'); // 'show' 클래스를 토글합니다.
+    rightSideBar.classList.toggle('show'); // 'show' 클래스를 토글
   }
 
-  // right-Menu 버튼에 클릭 이벤트를 추가합니다.
+  // rightMenu 버튼에 클릭 이벤트를 추가
   rightMenuButton.addEventListener('click', toggleRightMenu);
 
   });
 
+  // 우측 사이드바에 textBox의 내용을 추가하는 함수
   function addToSideBar() {
     const textBox = document.getElementById('textBox');
     const inputValue = textBox.value.trim();
