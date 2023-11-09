@@ -160,13 +160,7 @@ function navigateToPage(page) {
     const sideBar = document.querySelector('.sideBar');
     hamburgerMenu.addEventListener('click', () => {
       sideBar.classList.toggle('open'); // 토글 열기
-      document.body.style.overflow = sideBar.classList.contains('open') ? 'hidden' : 'auto'; 
-    });
-
-    const closeButton = document.getElementById('Close-Button');
-    closeButton.addEventListener('click', () => {
-      sideBar.classList.remove('open');
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = sideBar.classList.contains('open') ? 'hidden' : 'auto'; //* 삼항 연산자: 참일 때, hidden / 거짓일 때, auto
     });
   }
 
