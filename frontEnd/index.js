@@ -108,12 +108,11 @@ function addText() {
 }
 
 // 햄버거 메뉴
-const hamburgerMenu = document.getElementById("Hamburger-Menu");
+const hamburgerMenu = document.getElementById("hamburgerMenu");
 const sideBar = document.createElement("div");
 sideBar.classList.add("sideBar");
 
 const closeButton = document.createElement("button");
-closeButton.innerHTML = "&#9776;"; // ☰ 아이콘
 closeButton.classList.add("hamburgerIcon");
 hamburgerMenu.appendChild(sideBar);
 
@@ -155,7 +154,7 @@ function navigateToPage(page) {
     .catch(error => console.error('Error:', error));
 
   // 햄버거 메뉴 토글
-  const hamburgerMenu = document.getElementById('Hamburger-Menu');
+  const hamburgerMenu = document.getElementById('hamburgerMenu');
   const sideBar = document.querySelector('.sideBar');
   hamburgerMenu.addEventListener('click', () => {
     sideBar.classList.toggle('open');
@@ -171,7 +170,7 @@ function navigateToPage(page) {
 
 // right-Menu에 이벤트 추가
 document.addEventListener('DOMContentLoaded', () => {
-  const rightMenuButton = document.getElementById('right-Menu');
+  const rightMenuButton = document.getElementById('rightMenu');
   const rightSideBar = document.getElementById('rightSideBar');
   
   // right-Menu 버튼을 클릭했을 때 rightSideBar에 show 클래스를 토글하는 함수

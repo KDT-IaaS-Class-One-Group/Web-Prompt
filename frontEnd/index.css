@@ -10,7 +10,7 @@
   padding: 10px 20px;
 }
 
-#Hamburger-Menu, #Share-Button {
+#hamburgerMenu, #shareButton {
   background-color: transparent;
   border: none;
   color: #F5F5F5; 
@@ -122,7 +122,7 @@ li {
 
 
 
-#right-Menu {
+#rightMenu {
   display: flex;
   background-color: #FF5733;
   border: none;
@@ -159,7 +159,7 @@ li {
   font-size: 16px;
 }
 
-#Submit-Button {
+#submitButton {
   background-color: #4CAF50; 
   border: none;
   color: #F5F5F5;
