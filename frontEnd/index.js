@@ -8,63 +8,77 @@ function addText() {
   }
   const container = document.getElementById('Container');
 
+  //! User
   // user 메시지를 li 태그로 생성
   const userLi = document.createElement("li");
   userLi.classList.add("message", "user"); //* classList는 DOM 요소의 클래스에 접근해 추가, 제거, 토글이 가능하게 함
   userLi.style.backgroundColor = "#add8e6"; // 라이트 블루 색상
 
+  // userLi > 유저 프로필(span 태그)
   const userSpanProfile = document.createElement("span");
   userSpanProfile.classList.add("profile");
   userSpanProfile.textContent = "👤 User: ";
 
+  // userLi > 유저 텍스트(span 태그) === inputValue
   const userSpanText = document.createElement("span");
   userSpanText.classList.add("text");
-  userSpanText.textContent = `${inputValue}`;
+  userSpanText.textContent = inputValue;
 
-
-  // 현재 시간을 24시간 형식으로 표시하기 위한 변수들
-  const currentTime = new Date();
-  const userHours = currentTime.getHours().toString().padStart(2, '0');
+  // userLi > 유저 타임스탬프(span 태그)
+  // 시간 표현에 필요한 변수 선언
+  const currentTime = new Date(); // 현재 날짜와 시간을 생성자 함수로 객체 생성
+  const userHours = currentTime.getHours().toString().padStart(2, '0'); //
   const userMinutes = currentTime.getMinutes().toString().padStart(2, '0');
+  //* padStart() 메서드는 문자열에 사용하는 메서드
 
   const userSpanTimeStamp = document.createElement("span");
   userSpanTimeStamp.classList.add("timeStamp");
   userSpanTimeStamp.style.float = "right"; // 우측 정렬
-  userSpanTimeStamp.textContent = `${userHours}:${userMinutes}`; // 24시간 형식으로 표시
+  userSpanTimeStamp.textContent = `${userHours}:${userMinutes}`; // HH:mm으로 표시
 
+  // 컨테이너에 userLi 추가
+  container.appendChild(userLi);
+
+  // userLi에 자식 요소로 span 태그들 추가
   userLi.appendChild(userSpanProfile);
   userLi.appendChild(userSpanText);
   userLi.appendChild(userSpanTimeStamp);
-  container.appendChild(userLi);
 
-  // Assistant 대응 메시지 생성
-  const assistantResponse = inputValue + "에 대한 제 생각은...";
-
-  // 현재 시간을 24시간 형식으로 표시하기 위한 변수들
-  const assistantHours = currentTime.getHours().toString().padStart(2, '0');
-  const assistantMinutes = currentTime.getMinutes().toString().padStart(2, '0');
-
+  //! Assistant
+  // Assistant 메시지를 li 태그로 생성
   const assistantLi = document.createElement("li");
   assistantLi.classList.add("message", "assistant");
   assistantLi.style.backgroundColor = "#90ee90"; // 라이트 그린 (#90ee90)
-
+  
+  // assistantLi > 어시스턴트 프로필(span 태그)
   const assistantSpanProfile = document.createElement("span");
   assistantSpanProfile.classList.add("profile");
   assistantSpanProfile.textContent = "🌐 Assistant: ";
-
+  
+  // assistantLi > 어시스턴트 텍스트(span 태그) === assistantResponse
   const assistantSpanText = document.createElement("span");
   assistantSpanText.classList.add("text");
+  
+  const assistantResponse = inputValue + "에 대한 제 생각은..."; // Assistant의 대응 메시지
   assistantSpanText.textContent = assistantResponse;
+  
+  // assistantLi > 어시스턴트 타임스탬프(span 태그)
+  // 시간 표현에 필요한 변수 선언
+  const assistantHours = currentTime.getHours().toString().padStart(2, '0');
+  const assistantMinutes = currentTime.getMinutes().toString().padStart(2, '0');
 
   const assistantSpanTimeStamp = document.createElement("span");
   assistantSpanTimeStamp.classList.add("timeStamp");
   assistantSpanTimeStamp.style.float = "right"; // 우측 정렬
   assistantSpanTimeStamp.textContent = `${assistantHours}:${assistantMinutes}`; // 24시간 형식으로 표시
 
+  // 컨테이너에 assistnatLi 추가
+  container.appendChild(assistantLi);
+
+  // assistantLi에 자식 요소로 span 태그들 추가
   assistantLi.appendChild(assistantSpanProfile);
   assistantLi.appendChild(assistantSpanText);
   assistantLi.appendChild(assistantSpanTimeStamp);
-  container.appendChild(assistantLi);
 
   // textBox에 입력한 내용을 POST로 전송
   console.log("사용자 입력 내용:", inputValue);
