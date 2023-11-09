@@ -80,23 +80,25 @@ function addText() {
   assistantLi.appendChild(assistantSpanText);
   assistantLi.appendChild(assistantSpanTimeStamp);
 
-  // textBox에 입력한 내용을 POST로 전송
+  // textBox에 입력한 내용을 서버 콘솔에 출력
   console.log("사용자 입력 내용:", inputValue);
 
-  fetch('/api/submit', {
+  // Fetch를 이용한 POST 처리
+  fetch('/api/submit', { //* 'http://localhost:3000/api/submit'과 같은 절대경로를 사용해도 괜찮다
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json', // 요청 헤더에 콘텐츠 타입을 명시
     },
-    body: JSON.stringify({ inputText: inputValue }),
+    body: JSON.stringify({ inputText: inputValue }), // JSON.stringify(): 요청 바디 부분의 객체를 JSON 문자열로 반환하는 메서드
   })
-  .then(response => response.json())
+  // * .then은 서버로부터 정상적인 응답을 받았을 때에만 로직이 실행됨
+  .then(response => response.json()) // 서버 응답을 JSON 형식으로 파싱
   .then(data => {
-    console.log(data); // 서버로부터 받은 응답을 콘솔에 출력
-    // 여기에서 적절한 동작을 수행할 수 있음
+    console.log(data); // 서버 응답을 콘솔에 출력
   })
+  //* .catch는 서버로부터의 응답이 오류일 때만 로직이 실행됨
   .catch(error => {
-    console.error('에러 발생:', error);
+    console.error('에러 발생:', error); // 에러 처리
   });
 
   addToSideBar();
