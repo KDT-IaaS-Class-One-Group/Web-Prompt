@@ -8,15 +8,10 @@ function addText() {
   }
   const container = document.getElementById('Container');
 
-  // 현재 시간을 24시간 형식으로 표시하기 위한 변수들
-  const currentTime = new Date();
-  const userHours = currentTime.getHours().toString().padStart(2, '0');
-  const userMinutes = currentTime.getMinutes().toString().padStart(2, '0');
-
-  // user 메시지를 li태그로 생성
+  // user 메시지를 li 태그로 생성
   const userLi = document.createElement("li");
-  userLi.classList.add("message", "user");
-  userLi.style.backgroundColor = "#add8e6"; // 라이트 블루 (#add8e6)
+  userLi.classList.add("message", "user"); //* classList는 DOM 요소의 클래스에 접근해 추가, 제거, 토글이 가능하게 함
+  userLi.style.backgroundColor = "#add8e6"; // 라이트 블루 색상
 
   const userSpanProfile = document.createElement("span");
   userSpanProfile.classList.add("profile");
@@ -25,6 +20,12 @@ function addText() {
   const userSpanText = document.createElement("span");
   userSpanText.classList.add("text");
   userSpanText.textContent = `${inputValue}`;
+
+
+  // 현재 시간을 24시간 형식으로 표시하기 위한 변수들
+  const currentTime = new Date();
+  const userHours = currentTime.getHours().toString().padStart(2, '0');
+  const userMinutes = currentTime.getMinutes().toString().padStart(2, '0');
 
   const userSpanTimeStamp = document.createElement("span");
   userSpanTimeStamp.classList.add("timeStamp");
