@@ -130,45 +130,45 @@ document.addEventListener('DOMContentLoaded', () => { //* DOMContentLoaded는 �
 // 사이드바에 들어갈 메뉴 버튼에 각각 ID 부여
   menuItems.forEach(item => {
     const button = document.createElement('button');
-    button.textContent = item;
-    button.id = `${item.toLowerCase()}Button`; // 각 버튼에 ID 부여
+    button.textContent = item; // 각 버튼에 이름 부여
+    button.id = `${item}Button`; // 각 버튼에 ID 부여
     button.classList.add('menuItem'); // 버튼에 클래스 추가
     sideBar.appendChild(button);
-    // 각 버튼에 클릭 이벤트 추가
-    button.addEventListener('click', () => {
-      navigateToPage(item.toLowerCase()); // 각 버튼에 맞는 페이지로 이동하는 함수 호출
+    
+    button.addEventListener('click', () => { // 각 버튼에 클릭 이벤트 추가
+      navigateToPage(item); // 각 버튼에 맞는 페이지로 이동하는 navigateToPage 함수 호출
     });
   });
 });
 
-
+// 페이지 이동하는 함수 navigateToPage()
 function navigateToPage(page) {
-  fetch(`/pages/${page}.html`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
+  fetch(`/pages/${page}.html`) // Fetch API를 통해 서버로부터 데이터를 가져옴
+    .then(response => { // 정상적으로 가져올 때, 실행
+      if (!response.ok) { // HTTP 응답이 200~299 내(성공적인 범위)에 있는지 확인하는 속성
+        throw new Error('네트워크 에러');
       }
-      return response.text();
+      return response.text(); // 텍스트로 파싱
     })
     .then(html => {
-      document.body.innerHTML = html;
+      document.body.innerHTML = html; // 현재 문서의 body 요소에 접근하고, 서버에서 받은 매개변수 html 값으로 교체
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => console.error('Error:', error)); // 정상적으로 가져오지 못할 때, 실행
 
-  // 햄버거 메뉴 토글
-  const hamburgerMenu = document.getElementById('hamburgerMenu');
-  const sideBar = document.querySelector('.sideBar');
-  hamburgerMenu.addEventListener('click', () => {
-    sideBar.classList.toggle('open');
-    document.body.style.overflow = sideBar.classList.contains('open') ? 'hidden' : 'auto';
-  });
+    // 햄버거 메뉴 토글
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const sideBar = document.querySelector('.sideBar');
+    hamburgerMenu.addEventListener('click', () => {
+      sideBar.classList.toggle('open'); // 토글 열기
+      document.body.style.overflow = sideBar.classList.contains('open') ? 'hidden' : 'auto'; 
+    });
 
-  const closeButton = document.getElementById('Close-Button');
-  closeButton.addEventListener('click', () => {
-    sideBar.classList.remove('open');
-    document.body.style.overflow = 'auto';
-  });
-}
+    const closeButton = document.getElementById('Close-Button');
+    closeButton.addEventListener('click', () => {
+      sideBar.classList.remove('open');
+      document.body.style.overflow = 'auto';
+    });
+  }
 
 // right-Menu에 이벤트 추가
 document.addEventListener('DOMContentLoaded', () => {
